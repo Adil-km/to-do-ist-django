@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+}
+
+.todo-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.todo-header h1 {
+    font-size: 38px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 8px;
+}
+
+.todo-header p {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.todo-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.add-task {
+    padding: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.add-task input {
+    flex: 1;
+    padding: 16px 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    outline: none;
+}
+
+.add-task input:focus {
+    box-shadow: 0 5px 20px rgba(118, 75, 162, 0.3);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.add-task input::placeholder {
+    color: #999;
+}
+
+.add-btn {
+    padding: 16px 25px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(118, 75, 162, 0.3);
+}
+
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todo-item {
+    padding: 20px 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.todo-item:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.checkbox-wrapper {
+    position: relative;
+    margin-right: 15px;
+}
+
+.checkbox-wrapper .checkbox {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid #764ba2;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    outline: none;
+}
+
+.checkbox-wrapper .checkbox:checked {
+    background-color: #764ba2;
+}
+
+.checkbox-wrapper .checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+}
+
+.todo-item-content {
+    flex: 1;
+}
+
+.todo-item-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.completed .todo-item-title {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.todo-item-date {
+    font-size: 12px;
+    color: #888;
+    font-weight: 300;
+}
+
+.delete-btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    background: #ff7675;
+    transform: scale(1.1);
+}
+
+.delete-btn:hover .cross {
+    color: white;
+}
+
+.cross {
+    color: #ff7675;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.todo-footer {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(118, 75, 162, 0.1);
+}
+
+.items-left {
+    font-size: 14px;
+    color: #666;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+}
+
+.filter {
+    background: transparent;
+    border: none;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px 8px;
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+
+.filter.active, .filter:hover {
+    background: #764ba2;
+    color: white;
+}
+
+.floating-bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+.bubble-1 {
+    width: 100px;
+    height: 100px;
+    top: -30px;
+    left: -30px;
+}
+
+.bubble-2 {
+    width: 150px;
+    height: 150px;
+    bottom: -50px;
+    right: -50px;
+}
+
+.bubble-3 {
+    width: 80px;
+    height: 80px;
+    top: 40%;
+    right: -40px;
+}

@@ -1,0 +1,106 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Todo List</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-header">
+            <h1>My Tasks</h1>
+            <p>Plan your day beautifully</p>
+        </div>
+        
+        <div class="todo-card">
+            <div class="add-task">
+                <input type="text" placeholder="Add a new task...">
+                <button class="add-btn">Add</button>
+            </div>
+            
+            <ul class="todo-list">
+                <li class="todo-item">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox" id="task1">
+                    </div>
+                    <div class="todo-item-content">
+                        <div class="todo-item-title">Design team meeting</div>
+                        <div class="todo-item-date">Today, 2:00 PM</div>
+                    </div>
+                    <button class="delete-btn">
+                        <span class="cross">×</span>
+                    </button>
+                </li>
+                
+                <li class="todo-item completed">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox" id="task2" checked>
+                    </div>
+                    <div class="todo-item-content">
+                        <div class="todo-item-title">Review client feedback</div>
+                        <div class="todo-item-date">Today, 10:30 AM</div>
+                    </div>
+                    <button class="delete-btn">
+                        <span class="cross">×</span>
+                    </button>
+                </li>
+                
+                <li class="todo-item">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox" id="task3">
+                    </div>
+                    <div class="todo-item-content">
+                        <div class="todo-item-title">Update portfolio website</div>
+                        <div class="todo-item-date">Tomorrow, 3:00 PM</div>
+                    </div>
+                    <button class="delete-btn">
+                        <span class="cross">×</span>
+                    </button>
+                </li>
+                
+                <li class="todo-item">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox" id="task4">
+                    </div>
+                    <div class="todo-item-content">
+                        <div class="todo-item-title">Prepare presentation slides</div>
+                        <div class="todo-item-date">Friday, 12:00 PM</div>
+                    </div>
+                    <button class="delete-btn">
+                        <span class="cross">×</span>
+                    </button>
+                </li>
+                
+                <li class="todo-item">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox" id="task5">
+                    </div>
+                    <div class="todo-item-content">
+                        <div class="todo-item-title">Call with marketing team</div>
+                        <div class="todo-item-date">Next Monday, 11:00 AM</div>
+                    </div>
+                    <button class="delete-btn">
+                        <span class="cross">×</span>
+                    </button>
+                </li>
+            </ul>
+            
+            <div class="todo-footer">
+                <div class="items-left">4 items left</div>
+                <div class="filters">
+                    <button class="filter active">All</button>
+                    <button class="filter">Active</button>
+                    <button class="filter">Completed</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="floating-bubble bubble-1"></div>
+        <div class="floating-bubble bubble-2"></div>
+        <div class="floating-bubble bubble-3"></div>
+    </div>
+</body>
+</html>
