@@ -22,5 +22,9 @@ def remove_task(request,pk):
         list_obj.delete()
         return redirect("home")
 
-def check_task(request):
-    return render(request,'index.html')
+def check_task(request,pk):
+    list_obj = TodoList.objects.get(pk=pk)
+    if list_obj:
+        list_obj.is_checked = not list_obj.is_checked
+        list_obj.save()
+        return redirect("home")
