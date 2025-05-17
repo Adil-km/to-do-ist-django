@@ -187,7 +187,9 @@ body {
     border: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-left: 10px;
+    text-decoration: none;
 }
+
 
 .delete-btn:hover {
     background: #ff7675;

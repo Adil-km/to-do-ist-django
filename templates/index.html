@@ -15,9 +15,9 @@
     <div class="todo-item-title">{{ list.task}}</div>
     <div class="todo-item-date">{{ list.created_at|localtime|date:"M d, h:i A" }}</div>
   </div>
-  <button class="delete-btn">
+  <a href="{% url 'remove' list.id %}" class="delete-btn">
     <span class="cross">×</span>
-  </button>
+  </a>
 </li>
 {% endfor %}
 

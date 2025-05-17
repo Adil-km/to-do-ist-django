@@ -16,8 +16,11 @@ def add_task(request):
         list_obj.save()
     return redirect("home")
 
-def remove_task(request):
-    return render(request,'index.html')
+def remove_task(request,pk):
+    list_obj = TodoList.objects.get(pk=pk)
+    if list_obj:
+        list_obj.delete()
+        return redirect("home")
 
 def check_task(request):
     return render(request,'index.html')
