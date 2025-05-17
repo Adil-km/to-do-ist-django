@@ -1,11 +1,26 @@
 {% extends 'base.html'%}
+{% load tz %}
 
 {% block input_box %}
     {% include 'inputBox.html'%}
 {% endblock input_box %}
 
 {% block content %}
-    {% include 'content.html'%}     
+    {% for list in task_list %}
+<li class="todo-item">
+  <div class="checkbox-wrapper">
+    <input type="checkbox" class="checkbox" id="task1" />
+  </div>
+  <div class="todo-item-content">
+    <div class="todo-item-title">{{ list.task}}</div>
+    <div class="todo-item-date">{{ list.created_at|localtime|date:"M d, h:i A" }}</div>
+  </div>
+  <button class="delete-btn">
+    <span class="cross">×</span>
+  </button>
+</li>
+{% endfor %}
+
 {% endblock content %}
 
 {% block filter %}
