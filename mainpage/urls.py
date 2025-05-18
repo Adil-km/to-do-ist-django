@@ -8,4 +8,5 @@ urlpatterns = [
     path('checkbox/<pk>', views.check_task, name="checkbox"),
     path('active/', views.active_task, name="active"),
     path('completed/', views.completed_task, name="completed"),
+    path('edit/<pk>', views.edit_task, name="edit"),
 ]

@@ -3,7 +3,7 @@
 <div>
   <form class="add-task" method="post" action="{% url 'add' %}" enctype="multipart/form-data">
     {% csrf_token %}
-    <input type="text" name="task" placeholder="Add a new task..." />
+    <input type="text" name="task" placeholder="Add a new task..." value="{{task}}"/>
     <button type="submit" class="add-btn">Add</button>
   </form>
 </div>

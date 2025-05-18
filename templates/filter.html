@@ -1,11 +1,31 @@
 
 <div class="todo-footer">
     <div class="items-left">
-        {% if count < 1 %}
-            All tasks are completed
-        {%else%}
-            {{count}} tasks left
-        {% endif %}
+      
+      {% if task_list %}
+
+          {% if count < 1 %}
+
+              {% if request.resolver_match.url_name == 'home' or request.resolver_match.url_name == 'completed' %}
+                  All tasks are completed
+              {% elif request.resolver_match.url_name == 'active' %}
+                  No active tasks
+              {% endif %}
+              
+          {% else %}
+
+              {% if request.resolver_match.url_name == 'home' or request.resolver_match.url_name == 'active' %}
+                  {{ count }} task{{ count|pluralize }} left
+              {% elif request.resolver_match.url_name == 'completed' %}
+                  {{ count }} completed task{{ count|pluralize }}
+              {% endif %}
+
+          {% endif %}
+
+      {% else%}
+        No available tasks
+      {% endif %}
+      
     </div>
     <div class="filters">
         <a href="{% url 'home' %}" id="all" class="filter">All</a>

@@ -190,6 +190,63 @@ body {
     font-weight: 300;
 }
 
+/* edit button */
+
+.edit-btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.edit-btn:hover {
+    background: #6CC1EF;
+    transform: scale(1.1);
+}
+
+.edit-btn:hover .cross {
+    color: white;
+}
+
+.edit {
+    color: #6CC1EF;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.todo-item .edit-btn{
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.todo-item:hover .edit-btn{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.edit .material-icons{
+    font-size:0.8rem;
+    color:#6CC1EF;
+    transition: all 0.3s ease;
+}
+
+.edit-btn:hover .material-icons{
+    color: white;
+}
+
+
+/* delete button */
 .delete-btn {
     width: 26px;
     height: 26px;
@@ -222,6 +279,19 @@ body {
     font-weight: bold;
     transition: all 0.3s ease;
 }
+
+.todo-item .delete-btn{
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.todo-item:hover .delete-btn{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* footer */
 
 .todo-footer {
     padding: 20px 25px;

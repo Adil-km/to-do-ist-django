@@ -18,6 +18,10 @@
 
       </div>
 
+      <a href="{% url 'edit' list.id %}" class="edit-btn">
+        <span class="edit"><i class="material-icons">edit</i></span>
+      </a>
+
       <a href="{% url 'remove' list.id %}" class="delete-btn">
         <span class="cross">×</span>
       </a>
