@@ -28,3 +28,12 @@ def check_task(request,pk):
         list_obj.is_checked = not list_obj.is_checked
         list_obj.save()
         return redirect("home")
+    
+def active_task(request):
+    task_list = TodoList.objects.all().order_by('-created_at').filter(is_checked = False)
+    return render(request,'index.html',{"task_list":task_list})
+
+def completed_task(request):
+    task_list = TodoList.objects.all().order_by('-created_at').filter(is_checked = True)
+    return render(request,'index.html',{"task_list":task_list})
+

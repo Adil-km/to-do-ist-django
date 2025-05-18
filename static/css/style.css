@@ -176,6 +176,7 @@ body {
     font-weight: 500;
     color: #333;
     margin-bottom: 4px;
+    word-break: break-word;
 }
 
 .completed .todo-item-title {
@@ -240,8 +241,10 @@ body {
     gap: 10px;
 }
 
+.filters a{
+    text-decoration: none;
+}
 .filter {
-    background: transparent;
     border: none;
     color: #666;
     font-size: 14px;

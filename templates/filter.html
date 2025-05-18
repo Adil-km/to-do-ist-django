@@ -2,9 +2,20 @@
 <div class="todo-footer">
     <div class="items-left">4 items left</div>
     <div class="filters">
-        <button class="filter active">All</button>
-        <button class="filter">Active</button>
-        <button class="filter">Completed</button>
+        <a href="{% url 'home' %}" id="all" class="filter">All</a>
+        <a href="{% url 'active' %}" id="active" class="filter">Active</a>
+        <a href="{% url 'completed' %}" id="completed" class="filter">Completed</a>
     </div>
 </div>
 
+<script>
+  const path = window.location.pathname;
+
+  if (path.startsWith("/active/")) {
+    document.getElementById("active").classList.add("active");
+  } else if (path.startsWith("/completed/")) {
+    document.getElementById("completed").classList.add("active");
+  }else{
+    document.getElementById("all").classList.add("active");
+  }
+</script>
