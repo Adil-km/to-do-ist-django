@@ -1,6 +1,12 @@
 
 <div class="todo-footer">
-    <div class="items-left">4 items left</div>
+    <div class="items-left">
+        {% if count < 1 %}
+            All tasks are completed
+        {%else%}
+            {{count}} tasks left
+        {% endif %}
+    </div>
     <div class="filters">
         <a href="{% url 'home' %}" id="all" class="filter">All</a>
         <a href="{% url 'active' %}" id="active" class="filter">Active</a>
@@ -9,12 +15,12 @@
 </div>
 
 <script>
-  const path = window.location.pathname;
-
-  if (path.startsWith("/active/")) {
+  if (window.location.pathname.startsWith("/active/")) {
     document.getElementById("active").classList.add("active");
-  } else if (path.startsWith("/completed/")) {
+
+  } else if (window.location.pathname.startsWith("/completed/")) {
     document.getElementById("completed").classList.add("active");
+
   }else{
     document.getElementById("all").classList.add("active");
   }

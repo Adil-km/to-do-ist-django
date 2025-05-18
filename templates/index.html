@@ -1,37 +1,12 @@
 {% extends 'base.html'%}
-{% load tz %}
+
 
 {% block input_box %}
     {% include 'inputBox.html'%}
 {% endblock input_box %}
 
 {% block content %}
-  {% for list in task_list %}
-
-    <li class="todo-item {% if list.is_checked %}completed{% endif %}">
-      <div class="checkbox-wrapper">
-
-        <a href="{% url 'checkbox' list.id %}" >
-          <span class="checkbox{% if list.is_checked %}-checked{% endif %}">
-            {% if list.is_checked %}✓{% endif %}
-          </span>
-        </a>
-
-      </div>
-      <div class="todo-item-content">
-
-        <div class="todo-item-title">{{ list.task}}</div>
-        <div class="todo-item-date">{{ list.created_at|localtime|date:"M d, h:i A" }}</div>
-
-      </div>
-
-      <a href="{% url 'remove' list.id %}" class="delete-btn">
-        <span class="cross">×</span>
-      </a>
-
-    </li>
-
-  {% endfor %}
+    {% include 'content.html'%}
 {% endblock content %}
 
 {% block filter %}

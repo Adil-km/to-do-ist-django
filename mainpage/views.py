@@ -6,7 +6,8 @@ from . models import TodoList
 
 def show_task(request):
     task_list = TodoList.objects.all().order_by('-created_at')
-    return render(request,'index.html',{"task_list":task_list})
+    count = TodoList.objects.filter(is_checked = False).count()
+    return render(request,'index.html',{"task_list":task_list,"count":count})
 
 
 def add_task(request):
