@@ -1,8 +1,15 @@
 
 {% for list in task_list %}
 
-    <li class="todo-item {% if list.is_checked %}completed{% endif %}">
-      <div class="checkbox-wrapper">
+    <li class="todo-item {% if list.is_checked %}completed{% endif %}" >
+      <div
+      {% if list.is_checked %}
+      data-tooltip="Unmark"
+      {% else %}
+      data-tooltip="Mark as done"
+      {% endif %}
+
+      class="checkbox-wrapper">
 
         <a href="{% url 'checkbox' list.id %}" >
           <span class="checkbox{% if list.is_checked %}-checked{% endif %}">
@@ -18,11 +25,11 @@
 
       </div>
 
-      <a href="{% url 'edit' list.id %}" class="edit-btn">
+      <a href="{% url 'edit' list.id %}" class="edit-btn" data-tooltip="Edit task">
         <span class="edit"><i class="material-icons">edit</i></span>
       </a>
 
-      <a href="{% url 'remove' list.id %}" class="delete-btn">
+      <a href="{% url 'remove' list.id %}" class="delete-btn" data-tooltip="Remove task">
         <span class="cross">×</span>
       </a>
 
