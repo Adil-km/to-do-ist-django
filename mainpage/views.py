@@ -4,14 +4,17 @@ from . models import TodoList
 
 # Create your views here.
 
+def login_page(request):
+    return render(request, 'login.html')
+
+def signup_page(request):
+    return render(request, 'signup.html')
+
 def show_task(request):
     task = request.session.pop('prefill_task', '')
-
     task_list = TodoList.objects.all().order_by('-created_at')
     count = TodoList.objects.filter(is_checked = False).count()
-
     return render(request,'index.html',{"task_list":task_list,'task': task,"count":count})
-
 
 def add_task(request):
     if request.POST and request.POST.get("task") != "":
@@ -42,7 +45,6 @@ def completed_task(request):
     task_list = TodoList.objects.all().order_by('-created_at').filter(is_checked = True)
     count = TodoList.objects.filter(is_checked = True).count()
     return render(request,'index.html',{"task_list":task_list,"count":count})
-
 
 def edit_task(request,pk):
     list_obj = TodoList.objects.get(pk=pk)

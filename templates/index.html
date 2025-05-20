@@ -1,14 +1,32 @@
 {% extends 'base.html'%}
 
+{% block navbar %}
+    {% include 'navbar.html'%}
+{% endblock navbar %}
 
-{% block input_box %}
-    {% include 'inputBox.html'%}
-{% endblock input_box %}
+{% block main_content %}
 
-{% block content %}
-    {% include 'content.html'%}
-{% endblock content %}
+    
+    {% include 'header.html'%}
 
-{% block filter %}
-    {% include 'filter.html'%}
-{% endblock filter %}
+    <div class="todo-card">
+
+        {% include 'inputBox.html'%}
+
+        <ul class="todo-list">
+            {% include 'content.html'%}
+        </ul>
+
+        {% include 'filter.html'%}
+
+    </div>
+
+{% endblock main_content %}
+
+
+
+
+
+
+
+

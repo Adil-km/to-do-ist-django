@@ -5,36 +5,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
+    <title>Daily Board</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 <body>
+
     <div class="container">
-        <div class="todo-header">
-            <h1>My Tasks</h1>
-            <p>Plan your day beautifully</p>
-        </div>
-        
 
-        
-        <div class="todo-card">
+        {% block navbar %}
+        {% endblock navbar %}
 
-            {% block input_box %}
-            {% endblock input_box %}
-            
-            <ul class="todo-list">
-                {% block content %}
-                {% endblock content %}
-            </ul>
-            
-            {% block filter %}
-            {% endblock filter %}
-
-        </div>
+        {% block main_content %}
+        {% endblock main_content %}
         
-         <div class="floating-bubble bubble-1"></div>
+        <div class="floating-bubble bubble-1"></div>
         <div class="floating-bubble bubble-2"></div>
         <div class="floating-bubble bubble-3"></div>   
         
