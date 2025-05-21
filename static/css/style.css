@@ -562,10 +562,55 @@ body {
 
 .form-footer a {
     color: var(--primary-purple);
-     font-weight: 600; 
-     text-decoration: none;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .form-footer a:hover {
     text-decoration: underline;
+}
+
+/* message box for error/success */
+/* error */
+
+.error{
+    background-color: #ffcaca;
+    color: #d8000c;
+    border-left: 4px solid #ff4d4d;
+    padding: 10px 15px;
+    margin: auto auto 10px auto;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.error li{
+    list-style: none;
+    font-weight: bold;
+}
+
+.error-container{
+    position: relative;
+    padding: 0 0 20px 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* success*/
+.success{
+    background-color: #9BE7C4;
+    color: #3c8664;
+    border-left: 4px solid #3c8664;
+    padding: 10px 15px;
+    margin: auto auto 10px auto;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.success li{
+    list-style: none;
+    font-weight: bold;
 }

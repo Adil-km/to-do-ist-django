@@ -4,12 +4,6 @@ from . models import TodoList
 
 # Create your views here.
 
-def login_page(request):
-    return render(request, 'login.html')
-
-def signup_page(request):
-    return render(request, 'signup.html')
-
 def show_task(request):
     task = request.session.pop('prefill_task', '')
     task_list = TodoList.objects.all().order_by('-created_at')

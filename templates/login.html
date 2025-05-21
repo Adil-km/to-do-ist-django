@@ -7,6 +7,16 @@
 {% block main_content %}
 <div class="login-card">
     <form method="post" enctype="multipart/form-data">
+        
+        {% if messages %}
+            <div class="error-container">
+                {% for message in messages %}
+                    <div class="{{ message.tags }}">
+                        <li>{{message}}</li>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
         {% csrf_token %}
         <div class="form-group">
             <label for="username">Username</label>

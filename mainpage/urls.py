@@ -9,6 +9,4 @@ urlpatterns = [
     path('active/', views.active_task, name="active"),
     path('completed/', views.completed_task, name="completed"),
     path('edit/<pk>', views.edit_task, name="edit"),
-    path('login/', views.login_page, name="login"),
-    path('signup/', views.signup_page, name="signup"),
 ]
