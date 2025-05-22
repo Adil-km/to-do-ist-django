@@ -41,3 +41,6 @@ def login_page(request):
             messages.error(request,"Invalid credentials")
     return render(request, 'login.html')
 
+def logout_page(request):
+    logout(request)
+    return redirect("login")

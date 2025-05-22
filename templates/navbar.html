@@ -6,7 +6,11 @@
     <div class="navbar-title">My Tasks</div>
   </a>
   <div class="navbar-buttons">
-    <a href="{%url 'login' %}" class="nav-btn login-nav-btn">Login</a>
-    <a href="{%url 'signup' %}" class="nav-btn signup-nav-btn">Sign up</a>
+    {% if not user.is_authenticated%}
+    <a href="{% url 'login' %}" class="nav-btn login-nav-btn">Login</a>
+    <a href="{% url 'signup' %}" class="nav-btn signup-nav-btn">Sign up</a>
+    {% else %}
+    <a href="{% url 'logout' %}" class="nav-btn login-nav-btn">Logout</a>
+    {% endif %}
   </div>
 </div>
