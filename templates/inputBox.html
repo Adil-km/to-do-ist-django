@@ -3,8 +3,7 @@
 <div>
   <form class="add-task" method="post" action="{% url 'add' %}" enctype="multipart/form-data">
     {% csrf_token %}
-    <input type="text" name="task" placeholder="Add a new task..." value="{{task}}" maxlength="200" required/>
-    <button type="submit" class="add-btn" data-tooltip="Add task">Add</button>
+    <input type="text" name="task" id="taskInputBox" placeholder="Add a new task..." value="{{task}}" tabindex="10" maxlength="200" required/>
+    <button type="submit" tabindex="20" class="add-btn" data-tooltip="Add task">Add</button>
   </form>
 </div>
-

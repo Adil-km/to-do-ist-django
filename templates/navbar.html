@@ -1,16 +1,25 @@
-
+{% load getFirstChar %}
+{% load static %}
 
 <div class="navbar">
   <a href="{%url 'home' %}" class="navbar-brand">
-    <div class="navbar-logo"></div>
-    <div class="navbar-title">My Tasks</div>
+    <div class="navbar-logo">
+      <img src="{% static 'images/logo.png' %}" alt="Logo">
+    </div>
+    <div class="navbar-title">Daily Board</div>
   </a>
   <div class="navbar-buttons">
     {% if not user.is_authenticated%}
-    <a href="{% url 'login' %}" class="nav-btn login-nav-btn">Login</a>
-    <a href="{% url 'signup' %}" class="nav-btn signup-nav-btn">Sign up</a>
+    <a href="{% url 'login' %}" class="nav-btn login-nav-btn" tabindex="70">Login</a>
+    <a href="{% url 'signup' %}" class="nav-btn signup-nav-btn" tabindex="80">Sign up</a>
     {% else %}
-    <a href="{% url 'logout' %}" class="nav-btn login-nav-btn">Logout</a>
+    <a href="{% url 'logout' %}" class="nav-btn login-nav-btn" tabindex="70">Logout</a>
+    {% endif %}
+    {% if request.user.is_authenticated %}
+    <div class="user-logo">
+      <span>{{ request.user.username|getFirstChar }}</span>
+    </div>
     {% endif %}
   </div>
 </div>
+

@@ -11,7 +11,7 @@
 
       class="checkbox-wrapper">
 
-        <a href="{% url 'checkbox' list.id %}" >
+        <a href="{% url 'checkbox' list.id %}" tabindex="30">
           <span class="checkbox{% if list.is_checked %}-checked{% endif %}">
             {% if list.is_checked %}✓{% endif %}
           </span>

@@ -25,5 +25,16 @@
         <div class="floating-bubble bubble-3"></div>   
         
     </div>
+
+    <script>
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "/" && document.activeElement.tagName !== "INPUT") {
+      e.preventDefault(); 
+      const input = document.querySelector("input[type='text'], input:not([type])");
+      if (input) input.focus();
+    }
+  });
+</script>
+
 </body>
 </html>
