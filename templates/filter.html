@@ -27,10 +27,10 @@
       {% endif %}
       
     </div>
-    <div class="filters">
-        <a href="{% url 'home' %}" id="all" class="filter" data-tooltip="Show all tasks">All</a>
-        <a href="{% url 'active' %}" id="active" class="filter" data-tooltip="Show active tasks">Active</a>
-        <a href="{% url 'completed' %}" id="completed" class="filter" data-tooltip="Show completed tasks">Completed</a>
+    <div class="filters"tabindex="40">
+        <a href="{% url 'home' %}" id="all" class="filter" data-tooltip="Show all tasks" tabindex="40">All</a>
+        <a href="{% url 'active' %}" id="active" class="filter" data-tooltip="Show active tasks" tabindex="40">Active</a>
+        <a href="{% url 'completed' %}" id="completed" class="filter" data-tooltip="Show completed tasks" tabindex="40">Completed</a>
     </div>
 </div>
 
