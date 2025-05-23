@@ -1,5 +1,7 @@
 {% load getFirstChar %}
 {% load static %}
+{% load getFirstChar %}
+{% load static %}
 
 <div class="navbar">
   <a href="{%url 'home' %}" class="navbar-brand">
@@ -7,9 +9,15 @@
       <img src="{% static 'images/logo.png' %}" alt="Logo">
     </div>
     <div class="navbar-title">Daily Board</div>
+    <div class="navbar-logo">
+      <img src="{% static 'images/logo.png' %}" alt="Logo">
+    </div>
+    <div class="navbar-title">Daily Board</div>
   </a>
   <div class="navbar-buttons">
     {% if not user.is_authenticated%}
+    <a href="{% url 'login' %}" class="nav-btn login-nav-btn" tabindex="70">Login</a>
+    <a href="{% url 'signup' %}" class="nav-btn signup-nav-btn" tabindex="80">Sign up</a>
     <a href="{% url 'login' %}" class="nav-btn login-nav-btn" tabindex="70">Login</a>
     <a href="{% url 'signup' %}" class="nav-btn signup-nav-btn" tabindex="80">Sign up</a>
     {% else %}
@@ -22,4 +30,5 @@
     {% endif %}
   </div>
 </div>
+
 

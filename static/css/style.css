@@ -72,9 +72,19 @@ body {
     width: 2rem;
     position: absolute;
     transform: translateY(2px);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-logo img{
+    width: 2rem;
+    position: absolute;
+    transform: translateY(2px);
 }
 
 .navbar-title {
+    font-size: 2rem;
     font-size: 2rem;
     font-weight: 700;
     color: var(--white);
@@ -86,11 +96,14 @@ body {
     gap: 15px;
     align-items: center;
     height: 3em;
+    align-items: center;
+    height: 3em;
 }
 
 .nav-btn {
     padding: 10px 20px;
     border-radius: 50px;
+    font-size: 1rem;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -140,6 +153,7 @@ body {
 
 .todo-header h1 {
     font-size: 3rem;
+    font-size: 3rem;
     font-weight: 700;
     color: var(--white);
     letter-spacing: 2px;
@@ -150,6 +164,7 @@ body {
 .todo-header p {
     color: rgba(255, 255, 255, 0.8);
     font-weight: 300;
+    font-size: 1.1rem;
     font-size: 1.1rem;
 }
 
@@ -182,6 +197,7 @@ body {
     background: rgba(255, 255, 255, 0.7);
     border-radius: 50px;
     font-size: 1rem;
+    font-size: 1rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: all 0.3s;
     outline: none;
@@ -202,6 +218,7 @@ body {
     color: var(--white);
     border: none;
     border-radius: 50px;
+    font-size: 1rem;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
@@ -279,7 +296,9 @@ body {
 }
 
 
+
 .todo-item-title {
+    font-size: 1rem;
     font-size: 1rem;
     font-weight: 500;
     color: var(--dark-gray);
@@ -293,6 +312,7 @@ body {
 }
 
 .todo-item-date {
+    font-size: 0.8rem;
     font-size: 0.8rem;
     color: #888;
     font-weight: 300;
@@ -325,6 +345,7 @@ body {
 
 .edit {
     color: var(--light-blue);
+    font-size: 1rem;
     font-size: 1rem;
     font-weight: bold;
     transition: all 0.3s ease;
@@ -373,6 +394,7 @@ body {
 .cross {
     color: var(--danger-red);
     font-size: 1rem;
+    font-size: 1rem;
     font-weight: bold;
     transition: all 0.3s ease;
 }
@@ -399,6 +421,7 @@ body {
 
 .items-left {
     font-size: 1rem;
+    font-size: 1rem;
     color: var(--gray);
 }
 
@@ -414,6 +437,7 @@ body {
 .filter {
     border: none;
     color: var(--gray);
+    font-size: 1rem;
     font-size: 1rem;
     cursor: pointer;
     padding: 5px 8px;
@@ -475,6 +499,7 @@ body {
     padding: 6px 10px;
     border-radius: 6px;
     font-size: 0.8rem;
+    font-size: 0.8rem;
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
@@ -509,6 +534,7 @@ body {
     font-weight: 500;
     color: var(--dark-gray);
     font-size: 1.1rem;
+    font-size: 1.1rem;
 }
 
 .form-input {
@@ -517,6 +543,7 @@ body {
     border: none;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 50px;
+    font-size: 1.1rem;
     font-size: 1.1rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: all 0.3s;
@@ -543,6 +570,7 @@ body {
     color: var(--white);
     border: none;
     border-radius: 50px;
+    font-size: 1.1rem;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
@@ -588,6 +616,7 @@ body {
     margin: auto auto 10px auto;
     border-radius: 5px;
     font-size: 1rem;
+    font-size: 1rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     overflow: hidden;
 }
@@ -612,6 +641,7 @@ body {
     padding: 10px 15px;
     margin: auto auto 10px auto;
     border-radius: 5px;
+    font-size: 1rem;
     font-size: 1rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     overflow: hidden;
@@ -678,4 +708,3 @@ body {
     font-weight: 900;
     color: var(--primary-purple);
 }
-
