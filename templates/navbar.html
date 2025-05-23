@@ -16,7 +16,7 @@
     <a href="{% url 'logout' %}" class="nav-btn login-nav-btn" tabindex="70">Logout</a>
     {% endif %}
     {% if request.user.is_authenticated %}
-    <div class="user-logo">
+    <div class="user-logo" data-tooltip="{{ request.user.username }}">
       <span>{{ request.user.username|getFirstChar }}</span>
     </div>
     {% endif %}

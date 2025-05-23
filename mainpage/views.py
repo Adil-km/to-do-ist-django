@@ -6,6 +6,9 @@ from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
+def temp(request):
+    return render(request,'temp.html')
+
 def show_task(request):
     if request.user.is_authenticated:
         task = request.session.pop('prefill_task', '')  
