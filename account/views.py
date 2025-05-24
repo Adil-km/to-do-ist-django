@@ -1,8 +1,26 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login,logout
+from .forms import UserCreation
 # Create your views here.
+
+
+def temp(request):
+    if request.method == 'POST':
+        form = UserCreation(request.POST)
+        if form.is_valid():
+            messages.success(request, 'Account created successfully!')
+            return HttpResponse("<p>hiii</p>")
+        else:
+            messages.error(request, 'Please correct the errors below.')
+    else:
+        form = UserCreation()
+
+    return render(request,'temp.html', {'form':form})
+
+
 
 def signup_page(request):
     if request.POST:
