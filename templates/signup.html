@@ -6,6 +6,97 @@
 
 {% block main_content %}
 <div class="login-card">
+    <form method="post">
+
+        <!-- Error -->
+        {% if messages %}
+            <div class="error-container">
+                {% for message in messages %}
+                    <div class="{{ message.tags }}">
+                        <li>{{message}}</li>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if form.non_field_errors %}
+            <div class="error-container">
+                {% for error in form.non_field_errors %}
+                    <div class="error">
+                        <li>{{ error }}</li>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %} 
+
+        {% csrf_token %}
+
+        <!-- Username -->
+        <div class="form-group">
+            <label for="username">Username</label>
+            {{ form.username }}
+        </div>
+        {% if form.username.errors %}
+        <div class="error-container">
+            <div class="error">
+                <li>{{ form.username.errors }}</li>
+            </div>
+        </div>
+        {% endif%}
+        
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            {{ form.email }}
+        </div>
+        {% if form.email.errors %}
+        <div class="error-container">
+            <div class="error">
+                <li>{{ form.email.errors }}</li>
+            </div>
+        </div>
+        {% endif%}
+        
+        <!-- Password -->
+        <div class="form-group">
+            <label for="password1">Password</label>
+            {{ form.password1 }}    
+        </div>
+        {% if form.password1.errors %}
+        <div class="error-container">
+            <div class="error">
+                <li>{{ form.password1.errors }}</li>
+            </div>
+        </div>
+        {% endif%}
+        
+        <!-- Confirm password -->
+        <div class="form-group">
+            <label for="password2">Confirm Password</label>
+            {{ form.password2 }}    
+        </div>
+        {% if form.password2.errors %}
+        <div class="error-container">
+            <div class="error">
+                <li>{{ form.password2.errors }}</li>
+            </div>
+        </div>
+        {% endif%}
+
+        <button tabindex="5" type="submit" class="login-btn">Sign up</button>
+    
+    </form>
+
+    <div class="form-footer">
+        <p>Already have an account?</p>
+        <a tabindex="6" href="{% url 'login' %}">Login</a>
+    </div>
+
+</div>
+
+{% endblock main_content %}
+
+<!-- old code
+<div class="login-card">
     <form method="post" enctype="multipart/form-data">
 
         {% if messages %}
@@ -49,6 +140,4 @@
         <a tabindex="6" href="{% url 'login' %}">Login</a>
     </div>
     
-</div>
-        
-{% endblock main_content %}
+</div> -->

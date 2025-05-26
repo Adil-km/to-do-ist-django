@@ -4,7 +4,62 @@
     {% include 'navbar.html'%}
 {% endblock navbar %}
 
+
 {% block main_content %}
+<div class="login-card">
+    <form method="post" enctype="multipart/form-data">
+        
+        <!-- Error -->
+        {% if messages %}
+            <div class="error-container">
+                {% for message in messages %}
+                    <div class="{{ message.tags }}">
+                        <li>{{message}}</li>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% csrf_token %}
+        
+        <!-- Username -->
+        <div class="form-group">
+            <label for="username">Username</label>
+            {{ form.username }}            
+        </div>
+        {% if form.username.errors %}
+        <div class="error-container">
+            <div class="error">
+                <li>{{ form.username.errors }}</li>
+            </div>
+        </div>
+        {% endif%}
+        
+        <!-- Password -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            {{ form.password }}    
+        </div>
+        {% if form.password.errors %}
+        <div class="error-container">
+            <div class="error">
+                <li>{{ form.password.errors }}</li>
+            </div>
+        </div>
+        {% endif%}
+        
+        <button tabindex="3" type="submit" class="login-btn">Login</button>
+    </form>
+    
+    <div class="form-footer">
+        <p>Don't have an account?</p>
+        <a tabindex="4" href="{% url 'signup' %}">Sign up</a>
+    </div>
+
+</div>
+        
+{% endblock main_content %}
+
+<!-- old code
 <div class="login-card">
     <form method="post" enctype="multipart/form-data">
         
@@ -36,6 +91,4 @@
         <a tabindex="4" href="{% url 'signup' %}">Sign up</a>
     </div>
 
-</div>
-        
-{% endblock main_content %}
+</div> -->
