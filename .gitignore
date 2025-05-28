@@ -73,3 +73,4 @@ dist/
 *.egg-info/
 
 node_modules/
+db.sqlite3
