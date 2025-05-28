@@ -13,6 +13,7 @@ ENV/
 # Django
 *.log
 *.pot
+*.pyo
 *.pyc
 db.sqlite3
 db.sqlite3-journal
@@ -23,6 +24,7 @@ local_settings.py
 __pycache__
 
 
+
 .env
 .env.*
 
@@ -31,7 +33,7 @@ __pycache__
 
 # PyCharm
 .idea/
-
+*.iml
 # macOS
 .DS_Store
 
@@ -43,6 +45,8 @@ Desktop.ini
 # Migrations 
 **/migrations/
 !*/migrations/__init__.py
+migrations/*
+
 
 # Coverage reports
 htmlcov/
