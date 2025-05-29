@@ -577,6 +577,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s;
     margin-top: 10px;
+    text-decoration: none;
 }
 
 .login-btn:hover {
@@ -730,3 +731,44 @@ body {
     font-weight: 900;
     color: var(--primary-purple);
 }
+
+
+
+
+/* password_reset form */
+
+.password_reset p{
+    margin-bottom: 25px;
+    margin-left: 2px;
+    font-size: 1rem;
+    color: var(--dark-gray);
+    line-height: 24px;
+}
+
+.password_reset h1{
+    margin-bottom: 10px;
+    color: var(--dark-gray);
+}
+
+/* password_reset_done page */
+
+.password_reset_done h1{
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.password_reset_done p{
+    text-align: center;
+    line-height: 24px;
+}
+
+.password_reset_done a{
+    display: block;
+    text-align: center;
+}
+
+.password_reset_done strong{
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
