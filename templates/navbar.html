@@ -16,6 +16,7 @@
     <a href="{% url 'signup' %}" class="nav-btn signup-nav-btn" tabindex="80">Sign up</a>
     {% else %}
     <a href="{% url 'logout' %}" class="nav-btn login-nav-btn" tabindex="70">Logout</a>
+    <a href="{% url 'password_change' %}" class="nav-btn login-nav-btn" tabindex="70">CHange Password</a>
     {% endif %}
     {% if request.user.is_authenticated %}
     <div class="user-logo" data-tooltip="{{ request.user.username }}">

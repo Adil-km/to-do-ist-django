@@ -760,6 +760,7 @@ body {
 .password_reset_done p{
     text-align: center;
     line-height: 24px;
+    padding-bottom: 10px;
 }
 
 .password_reset_done a{
