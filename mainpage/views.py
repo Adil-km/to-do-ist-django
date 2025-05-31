@@ -6,6 +6,9 @@ from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
+def crash(request):
+    raise Exception("Test 500")
+
 def show_task(request):
     if request.user.is_authenticated:
         task = request.session.pop('prefill_task', '')  
