@@ -51,6 +51,12 @@ class SignupForm(forms.Form):
             raise ValidationError("Username already exists.")
         return username
 
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists():
+            raise ValidationError("Email already registered.")
+        return email
+
     def clean(self):
         cleaned_data = super().clean()
         password1 = cleaned_data.get("password1")

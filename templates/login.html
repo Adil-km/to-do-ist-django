@@ -58,37 +58,3 @@
 </div>
         
 {% endblock main_content %}
-
-<!-- old code
-<div class="login-card">
-    <form method="post" enctype="multipart/form-data">
-        
-        {% if messages %}
-            <div class="error-container">
-                {% for message in messages %}
-                    <div class="{{ message.tags }}">
-                        <li>{{message}}</li>
-                    </div>
-                {% endfor %}
-            </div>
-        {% endif %}
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input tabindex="1" type="text" name="username" id="username" class="form-input" placeholder="Enter your username" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input tabindex="2" type="password" name="password" id="password" class="form-input" placeholder="Enter your password" required>
-        </div>
-        
-        <button tabindex="3" type="submit" class="login-btn">Login</button>
-    </form>
-    
-    <div class="form-footer">
-        <p>Don't have an account?</p>
-        <a tabindex="4" href="{% url 'signup' %}">Sign up</a>
-    </div>
-
-</div> -->
