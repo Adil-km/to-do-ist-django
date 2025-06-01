@@ -30,10 +30,14 @@
 body {
     min-height: 100vh;
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: 30px 0 0 0;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* ===============================
@@ -48,8 +52,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background: rgba(255, 255, 255, 0.057);
-    backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.21);
+    backdrop-filter: blur(5px);
     z-index: 100;
 }
 
@@ -89,6 +93,7 @@ body {
     font-weight: 700;
     color: var(--white);
     letter-spacing: 1px;
+    white-space: nowrap;
 }
 
 .navbar-buttons {
@@ -109,6 +114,7 @@ body {
     cursor: pointer;
     transition: all 0.3s;
     text-decoration: none;
+    text-align: center;
 }
 
 .login-nav-btn {
@@ -141,6 +147,7 @@ body {
     padding-top: 10vh;
     max-width: 450px;
     position: relative;
+    margin-bottom: 20px;
 }
 
 /* ===============================
@@ -176,7 +183,19 @@ body {
     backdrop-filter: blur(10px);
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    margin: 0 20px 0px;
     position: relative;
+}
+
+@media(max-width:420px){
+    .add-task {
+        display: flex;
+        flex-direction: column;
+    }
+    .add-task input,
+    .add-btn{
+        width: 100%;
+    }
 }
 
 /* ===============================
@@ -294,8 +313,6 @@ body {
 .todo-item-content {
     flex: 1;
 }
-
-
 
 .todo-item-title {
     font-size: 1rem;
@@ -419,6 +436,42 @@ body {
     background: rgba(118, 75, 162, 0.1);
 }
 
+@media(max-width:440px){
+    .todo-footer{
+        display: flex;
+        flex-direction: column;
+    }
+    .todo-footer .items-left{
+        padding-bottom: 10px;
+    }
+    .todo-footer .filter{
+        display: flex;
+        align-items: end;
+    }
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar .login-nav-btn,
+    .navbar .signup-nav-btn{
+        max-height: 100%;
+        font-size: 0.7rem;
+    }
+}
+
+@media(max-width:680px){
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .container{
+        margin-top: 18%;
+    }
+}
+
 .items-left {
     font-size: 1rem;
     font-size: 1rem;
@@ -465,23 +518,24 @@ body {
 .bubble-1 {
     width: 100px;
     height: 100px;
-    top: -30px;
-    left: -30px;
+    top: 10%;
+    left: 20%;
 }
 
 .bubble-2 {
     width: 150px;
     height: 150px;
-    bottom: -20px;
-    right: -50px;
+    bottom: 10%;
+    right: 20%;
 }
 
 .bubble-3 {
     width: 80px;
     height: 80px;
     top: 40%;
-    right: -40px;
+    right: 20%;
 }
+
 
 /* Global Tooltip container*/
 [data-tooltip] {
@@ -521,6 +575,17 @@ body {
     position: relative;
     overflow: hidden;
     padding: 35px;
+    margin: 0 20px 0px;
+}
+
+@media(max-width:430px){
+    .login-card .form-footer{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 /* Login card Form Elements */
@@ -593,7 +658,7 @@ body {
 
 .form-footer div{
     display: flex; 
-    justify-content: center; 
+    justify-content: space-between; 
 }
 
 .form-footer p{
@@ -605,6 +670,7 @@ body {
     color: var(--primary-purple);
     font-weight: 600;
     text-decoration: none;
+    text-align: center;
 }
 
 .form-footer a:hover {
@@ -772,4 +838,3 @@ body {
     font-weight: 600;
     color: var(--dark-gray);
 }
-

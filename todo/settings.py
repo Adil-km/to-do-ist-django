@@ -29,15 +29,18 @@ if not SECRET_KEY:
     raise ValueError("SECRET_KEY not set in environment variables")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+
+ngrok = '8639-2403-a080-836-2e7-c9f6-db1f-e2ab-8322.ngrok-free.app'
 
 if os.getenv('DJANGO_ENV') == 'production':
     ALLOWED_HOSTS = ['adilkm.pythonanywhere.com']
 else:
-    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+    ALLOWED_HOSTS = ['localhost','127.0.0.1', ngrok]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://adilkm.pythonanywhere.com'
+    'https://adilkm.pythonanywhere.com',
+    'https://'+ngrok
 ]
 
 

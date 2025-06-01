@@ -1,3 +1,7 @@
+# after deployment devlopment
+settings.py
+
+
 # Python
 __pycache__/
 *.py[cod]
